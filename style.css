@@ -1,0 +1,25 @@
+*{
+    background-color: black;
+}
+
+div{
+    width: 50%;
+    margin-left: 25%;
+    color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+
+
+img{
+    width: 100%;
+    align-items: center;
+    border: 5px solid white;
+}
+
+.libre {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+  }
