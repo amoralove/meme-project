@@ -1,38 +1,307 @@
-<!-- 
-  TODO: Create a motivational post website.
-Style it how ever you like. 
-Look at the goal image for inspiration.
-But it must have the following features:
-1. The main h1 text should be using the Regular Libre Baskerville Font from Google Fonts:
-  https://fonts.google.com/specimen/Libre+Baskerville
-2. The text should be white and background black.
-3. Add your own image into the images folder inside assets. It should have a 5px white border.
-4. The text should be center aligned.
-5. Create a div to contain the h1, p and img elements. Adjust the margins so that the image and text are centered on the page. 
-  Hint: You horizontally center a div by giving it a width of 50% and a margin-left of 25%.
-  Hint: Set the image to have a width of 100% so it fills the div. 
-6. Read about the text-transform property on MDN docs to make the h1 uppercase with CSS.
-  https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform 
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link
-    rel = "stylesheet"
-    href="style.css"
-    />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Wescue - Find Your Perfect Rescue Dog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>
-  <img src = "assets/images/meme.jpg" src = "cool dog with a bow">
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">&#x1f43e;</span> wescue
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#why-wescue">Why Wescue</a>
+        <a href="#shelters">For Shelters</a>
+        <a href="#chat-section" class="btn btn-nav">Start Matching</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find your perfect rescue dog.<br><span class="hero-highlight">Just tell us about your life.</span></h1>
+      <p class="hero-subtitle">Wescue uses AI to match you with shelter dogs that fit your lifestyle. No endless scrolling. No long forms. Just a quick conversation and personalized recommendations.</p>
+      <div class="hero-cta">
+        <a href="#chat-section" class="btn btn-primary btn-lg">Start Matching</a>
+        <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">6.3M</span>
+          <span class="stat-label">Dogs enter shelters yearly</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">50%</span>
+          <span class="stat-label">Are still waiting for homes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">~5 min</span>
+          <span class="stat-label">To find your match on Wescue</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h1 class = libre>I'm Professional</h1>
-  <p class = para>Waiting for my cuddles, kisses, and food</p>
-</div>
+  <!-- How It Works -->
+  <section id="how-it-works" class="section how-it-works">
+    <div class="container">
+      <h2 class="section-title">How Wescue Works</h2>
+      <p class="section-subtitle">Three steps. Five minutes. One perfect match.</p>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-icon">&#x1f4ac;</div>
+          <h3>Chat with our AI</h3>
+          <p>Tell us about your home, lifestyle, family, and what you're looking for in a dog. It's a conversation, not a form.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-icon">&#x2764;</div>
+          <h3>Get matched</h3>
+          <p>We'll recommend shelter dogs that truly fit your life - not just by breed, but by energy, temperament, and compatibility.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-icon">&#x1f3e0;</div>
+          <h3>Apply & adopt</h3>
+          <p>Apply directly through Wescue with a pre-filled application. Connect with the shelter and bring your new family member home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Chat Demo Section -->
+  <section id="chat-section" class="section chat-section">
+    <div class="container">
+      <h2 class="section-title">Try It Now</h2>
+      <p class="section-subtitle">Experience AI-powered dog matching. Tell us about yourself.</p>
+      <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+          <div class="message ai-message">
+            <div class="message-avatar">&#x1f43e;</div>
+            <div class="message-content">
+              <p>Hi there! I'm Wescue, and I'm here to help you find a rescue dog that's perfect for your life.</p>
+              <p>I'll ask you a few quick questions - nothing long or complicated. Ready to find your match?</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-options" id="chatOptions">
+          <button class="chat-option" onclick="startChat()">Yes, let's do it!</button>
+          <button class="chat-option" onclick="browseDogs()">I'd rather browse dogs first</button>
+        </div>
+        <div class="chat-input-area" id="chatInputArea" style="display: none;">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your answer..." onkeydown="if(event.key==='Enter')sendMessage()">
+          <button class="btn btn-primary chat-send" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Wescue -->
+  <section id="why-wescue" class="section why-section">
+    <div class="container">
+      <h2 class="section-title">Why Wescue?</h2>
+      <p class="section-subtitle">We're building adoption the way it should be.</p>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">&#x1f50d;</div>
+          <h3>Smarter than search</h3>
+          <p>Instead of scrolling through hundreds of dogs, tell us about your life and we'll find the right ones for you.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1f4cb;</div>
+          <h3>One application, every shelter</h3>
+          <p>Your profile travels with you. No more filling out the same long form for every shelter you contact.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1f3af;</div>
+          <h3>Better matches, fewer returns</h3>
+          <p>We optimize for lifelong placements, not just clicks. A dog matched to your lifestyle is a dog that stays.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1f6e1;</div>
+          <h3>Shelter-first, always</h3>
+          <p>Only verified shelters and rescue organizations. No breeders. No puppy mills. Ever.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1f436;</div>
+          <h3>Every dog gets seen</h3>
+          <p>Our algorithm surfaces overlooked dogs - seniors, special needs, less popular breeds - to the right adopters.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1f4b0;</div>
+          <h3>Always free for adopters</h3>
+          <p>We'll never charge adopters. Adoption should be accessible, not expensive.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Dog Cards -->
+  <section class="section dogs-section">
+    <div class="container">
+      <h2 class="section-title">Dogs Looking for Homes</h2>
+      <p class="section-subtitle">These are just a few of the wonderful dogs waiting for you.</p>
+      <div class="dogs-grid">
+        <div class="dog-card">
+          <div class="dog-image" style="background-color: #fde8d0;">
+            <div class="dog-placeholder">&#x1f415;</div>
+            <span class="dog-badge">Great with kids</span>
+          </div>
+          <div class="dog-info">
+            <h3>Luna</h3>
+            <p class="dog-meta">Lab Mix &middot; 2 years &middot; Medium</p>
+            <p class="dog-desc">Friendly, energetic, and always ready for an adventure. Luna loves fetch and belly rubs equally.</p>
+            <div class="dog-details">
+              <span class="dog-tag">High Energy</span>
+              <span class="dog-tag">House Trained</span>
+            </div>
+            <div class="dog-footer">
+              <span class="dog-shelter">Happy Tails Rescue</span>
+              <span class="dog-fee">$250</span>
+            </div>
+          </div>
+        </div>
+        <div class="dog-card">
+          <div class="dog-image" style="background-color: #e0e8f0;">
+            <div class="dog-placeholder">&#x1f9ae;</div>
+            <span class="dog-badge">Calm companion</span>
+          </div>
+          <div class="dog-info">
+            <h3>Benny</h3>
+            <p class="dog-meta">Beagle &middot; 5 years &middot; Small</p>
+            <p class="dog-desc">The perfect couch buddy. Benny's favorite activities include napping, snacking, and gentle walks.</p>
+            <div class="dog-details">
+              <span class="dog-tag">Low Energy</span>
+              <span class="dog-tag">Good with Cats</span>
+            </div>
+            <div class="dog-footer">
+              <span class="dog-shelter">Second Chance Animal Shelter</span>
+              <span class="dog-fee">$175</span>
+            </div>
+          </div>
+        </div>
+        <div class="dog-card">
+          <div class="dog-image" style="background-color: #f0e0e8;">
+            <div class="dog-placeholder">&#x1f429;</div>
+            <span class="dog-badge">Senior sweetie</span>
+          </div>
+          <div class="dog-info">
+            <h3>Rosie</h3>
+            <p class="dog-meta">Poodle Mix &middot; 9 years &middot; Small</p>
+            <p class="dog-desc">A gentle soul with so much love to give. Rosie is loyal, quiet, and the perfect lap dog.</p>
+            <div class="dog-details">
+              <span class="dog-tag">Low Energy</span>
+              <span class="dog-tag">Apartment Friendly</span>
+            </div>
+            <div class="dog-footer">
+              <span class="dog-shelter">Golden Years Rescue</span>
+              <span class="dog-fee">$100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dogs-cta">
+        <a href="#chat-section" class="btn btn-primary btn-lg">Find Your Match</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Shelters -->
+  <section id="shelters" class="section shelters-section">
+    <div class="container">
+      <div class="shelter-content">
+        <div class="shelter-text">
+          <h2>For Shelters & Rescues</h2>
+          <p class="shelter-lead">Wescue brings you pre-qualified adopters matched to your dogs. Less time screening, more time saving lives.</p>
+          <ul class="shelter-benefits">
+            <li>
+              <strong>Pre-qualified applicants.</strong> Adopters arrive with lifestyle data already collected, so you can focus on the personal connection.
+            </li>
+            <li>
+              <strong>Every dog gets visibility.</strong> Our algorithm ensures overlooked dogs reach the right people - not just the photogenic puppies.
+            </li>
+            <li>
+              <strong>Reduce returns.</strong> Better matches mean longer-lasting adoptions and less heartbreak for everyone.
+            </li>
+            <li>
+              <strong>Free to join.</strong> Wescue is free for shelters. Always will be.
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-lg">Register Your Shelter</a>
+        </div>
+        <div class="shelter-stats-box">
+          <h3>The Problem We're Solving</h3>
+          <div class="shelter-stat">
+            <span class="shelter-stat-num">~20%</span>
+            <span class="shelter-stat-desc">of adopted dogs are returned within the first year</span>
+          </div>
+          <div class="shelter-stat">
+            <span class="shelter-stat-num">70%</span>
+            <span class="shelter-stat-desc">of returns cite lifestyle incompatibility</span>
+          </div>
+          <div class="shelter-stat">
+            <span class="shelter-stat-num">45 min</span>
+            <span class="shelter-stat-desc">average time shelters spend per application review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <h2>Every dog deserves a home that fits.</h2>
+      <p>Start a conversation with Wescue and meet your match in minutes.</p>
+      <a href="#chat-section" class="btn btn-primary btn-lg">Start Matching</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo"><span class="logo-icon">&#x1f43e;</span> wescue</span>
+          <p>Making rescue dog adoption easier, faster, and better matched.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#chat-section">Find a Dog</a>
+          <a href="#shelters">For Shelters</a>
+        </div>
+        <div class="footer-links">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Mission</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wescue. Shelter-first, always.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
