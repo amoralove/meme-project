@@ -6,23 +6,24 @@
   <title>Wescue - Find Your Perfect Rescue Dog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <span class="logo-icon">&#x1f43e;</span> wescue
+        <span class="logo-paw">&#x1f43e;</span> wescue
       </a>
-      <div class="nav-links">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#why-wescue">Why Wescue</a>
-        <a href="#shelters">For Shelters</a>
-        <a href="#chat-section" class="btn btn-nav">Start Matching</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#why-wescue" class="nav-link">Why Wescue</a>
+        <a href="#shelters" class="nav-link">For Shelters</a>
+        <a href="#chat-section" class="btn-sketchy btn-nav">Start Matching!</a>
       </div>
-      <button class="mobile-menu-btn" aria-label="Menu">
+      <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -30,220 +31,361 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Find your perfect rescue dog.<br><span class="hero-highlight">No breeders. No puppy mills. Ever.</span></h1>
-      <p class="hero-subtitle">Wescue matches you with verified shelter dogs that fit your lifestyle. Every dog on our platform comes from a real rescue — never a breeder, never a puppy mill. Just a quick conversation and personalized recommendations.</p>
-      <div class="hero-cta">
-        <a href="#chat-section" class="btn btn-primary btn-lg">Start Matching</a>
-        <a href="#how-it-works" class="btn btn-ghost btn-lg">See How It Works</a>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Find your perfect rescue dog<span class="hero-period">.</span></h1>
+        <p class="hero-tagline">No breeders. No puppy mills. <span class="underline-squiggle">Ever.</span></p>
+        <p class="hero-desc">Every dog on Wescue comes from a verified shelter or rescue. Just tell us about your life, and we'll match you with dogs that actually fit.</p>
+        <div class="hero-cta">
+          <a href="#chat-section" class="btn-sketchy btn-primary">Start Matching!</a>
+          <a href="#how-it-works" class="btn-sketchy btn-secondary">How does it work?</a>
+        </div>
+        <!-- Hand-drawn arrow pointing to CTA -->
+        <svg class="hero-arrow" width="80" height="60" viewBox="0 0 80 60" fill="none">
+          <path d="M5 50 Q 20 10, 60 15 Q 70 16, 75 20" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="6 4" fill="none" stroke-linecap="round"/>
+          <path d="M68 12 L75 20 L65 22" stroke="#2d6a4f" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">6.3M</span>
-          <span class="stat-label">Dogs enter shelters yearly</span>
+      <div class="hero-image-area">
+        <div class="hero-doodle-card" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+          <div class="hero-dog-emoji">&#x1f436;</div>
+          <p class="hero-card-text">your new best friend is waiting!</p>
         </div>
-        <div class="stat">
-          <span class="stat-number">50%</span>
-          <span class="stat-label">Are still waiting for homes</span>
+        <!-- Bouncing decorative circle -->
+        <div class="hero-bounce-circle"></div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-blob" style="border-radius: 68% 32% 55% 45% / 40% 60% 40% 60%;">
+          <span class="stat-num">6.3M</span>
+          <span class="stat-label">dogs enter shelters yearly</span>
         </div>
-        <div class="stat">
-          <span class="stat-number">~5 min</span>
-          <span class="stat-label">To find your match on Wescue</span>
+        <div class="stat-blob" style="border-radius: 40% 60% 35% 65% / 55% 45% 55% 45%;">
+          <span class="stat-num">50%</span>
+          <span class="stat-label">still waiting for homes</span>
+        </div>
+        <div class="stat-blob" style="border-radius: 55% 45% 60% 40% / 35% 65% 40% 60%;">
+          <span class="stat-num">~5 min</span>
+          <span class="stat-label">to find your match</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section id="how-it-works" class="section how-it-works">
+  <section id="how-it-works" class="section">
     <div class="container">
-      <h2 class="section-title">How Wescue Works</h2>
-      <p class="section-subtitle">Three steps. Five minutes. One perfect match.</p>
+      <div class="section-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">How It Works</div>
+      <h2 class="section-title">Three steps. Five minutes.<br>One perfect match.</h2>
+
       <div class="steps-grid">
-        <div class="step">
-          <div class="step-number">1</div>
+        <div class="step-card" style="border-radius: 30px 255px 20px 255px / 255px 30px 255px 20px; transform: rotate(-1.5deg);">
+          <div class="step-num">1</div>
           <div class="step-icon">&#x1f4ac;</div>
           <h3>Chat with our AI</h3>
-          <p>Tell us about your home, lifestyle, family, and what you're looking for in a dog. It's a conversation, not a form.</p>
+          <p>Tell us about your home, lifestyle, and family. It's a conversation, not a form!</p>
         </div>
-        <div class="step">
-          <div class="step-number">2</div>
+
+        <!-- Squiggly connector (desktop only) -->
+        <svg class="step-connector" width="60" height="40" viewBox="0 0 60 40">
+          <path d="M0 20 Q 15 5, 30 20 Q 45 35, 60 20" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="5 4" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <div class="step-card" style="border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; transform: rotate(1deg);">
+          <div class="step-num">2</div>
           <div class="step-icon">&#x2764;</div>
           <h3>Get matched</h3>
-          <p>We'll recommend shelter dogs that truly fit your life - not just by breed, but by energy, temperament, and compatibility.</p>
+          <p>We recommend shelter dogs by energy, temperament, and real compatibility.</p>
         </div>
-        <div class="step">
-          <div class="step-number">3</div>
+
+        <svg class="step-connector" width="60" height="40" viewBox="0 0 60 40">
+          <path d="M0 20 Q 15 35, 30 20 Q 45 5, 60 20" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="5 4" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <div class="step-card" style="border-radius: 20px 255px 30px 255px / 255px 20px 255px 30px; transform: rotate(-0.8deg);">
+          <div class="step-num">3</div>
           <div class="step-icon">&#x1f3e0;</div>
-          <h3>Apply & adopt</h3>
-          <p>Apply directly through Wescue with a pre-filled application. Connect with the shelter and bring your new family member home.</p>
+          <h3>Apply &amp; adopt</h3>
+          <p>Apply with one click using your pre-filled profile. Meet your new best friend!</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AI Chat Demo Section -->
-  <section id="chat-section" class="section chat-section">
+  <!-- AI Chat Demo -->
+  <section id="chat-section" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Try It Now</h2>
-      <p class="section-subtitle">Experience AI-powered dog matching. Tell us about yourself.</p>
-      <div class="chat-container">
+      <div class="section-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Try It!</div>
+      <h2 class="section-title">See how matching feels</h2>
+      <p class="section-sub">Answer a few quick questions &mdash; like talking to a friend at the shelter.</p>
+
+      <div class="chat-container" style="border-radius: 30px 255px 30px 255px / 255px 30px 255px 30px;">
+        <div class="chat-tape"></div>
         <div class="chat-messages" id="chatMessages">
           <div class="message ai-message">
-            <div class="message-avatar">&#x1f43e;</div>
-            <div class="message-content">
-              <p>Hi there! I'm Wescue, and I'm here to help you find a rescue dog that's perfect for your life.</p>
-              <p>I'll ask you a few quick questions - nothing long or complicated. Ready to find your match?</p>
+            <div class="msg-avatar">&#x1f43e;</div>
+            <div class="msg-bubble" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+              <p>Hi there! I'm here to help you find a rescue dog that's perfect for your life.</p>
+              <p>I'll ask a few quick questions &mdash; nothing long. Ready?</p>
             </div>
           </div>
         </div>
         <div class="chat-options" id="chatOptions">
-          <button class="chat-option" onclick="startChat()">Yes, let's do it!</button>
-          <button class="chat-option" onclick="browseDogs()">I'd rather browse dogs first</button>
+          <button class="btn-sketchy chat-opt" onclick="startChat()">Yes, let's do it!</button>
+          <button class="btn-sketchy chat-opt" onclick="browseDogs()">I'd rather browse first</button>
         </div>
         <div class="chat-input-area" id="chatInputArea" style="display: none;">
-          <input type="text" id="chatInput" class="chat-input" placeholder="Type your answer..." onkeydown="if(event.key==='Enter')sendMessage()">
-          <button class="btn btn-primary chat-send" onclick="sendMessage()">Send</button>
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your answer..." onkeydown="if(event.key==='Enter')sendMessage()" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+          <button class="btn-sketchy btn-primary chat-send" onclick="sendMessage()">Send</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Wescue -->
-  <section id="why-wescue" class="section why-section">
+  <section id="why-wescue" class="section">
     <div class="container">
-      <h2 class="section-title">Why Wescue?</h2>
-      <p class="section-subtitle">We're building adoption the way it should be.</p>
+      <div class="section-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Why Wescue?</div>
+      <h2 class="section-title">We're building adoption<br>the way it should be.</h2>
+
       <div class="features-grid">
-        <div class="feature">
+        <div class="feature-card" data-decoration="tape" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; transform: rotate(-1deg);">
+          <div class="card-tape"></div>
           <div class="feature-icon">&#x1f50d;</div>
           <h3>Smarter than search</h3>
-          <p>Instead of scrolling through hundreds of dogs, tell us about your life and we'll find the right ones for you.</p>
+          <p>Tell us about your life and we'll find the right dogs. No more scrolling through hundreds of listings.</p>
         </div>
-        <div class="feature">
+
+        <div class="feature-card" data-decoration="tack" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px; transform: rotate(0.8deg);">
+          <div class="card-tack"></div>
           <div class="feature-icon">&#x1f4cb;</div>
-          <h3>One application, every shelter</h3>
-          <p>Your profile travels with you. No more filling out the same long form for every shelter you contact.</p>
+          <h3>One app, every shelter</h3>
+          <p>Your profile travels with you. No more filling out the same long form for every shelter.</p>
         </div>
-        <div class="feature">
+
+        <div class="feature-card" data-decoration="tape" style="border-radius: 30px 255px 20px 255px / 255px 30px 255px 20px; transform: rotate(-0.5deg);">
+          <div class="card-tape"></div>
           <div class="feature-icon">&#x1f3af;</div>
-          <h3>Better matches, fewer returns</h3>
-          <p>We optimize for lifelong placements, not just clicks. A dog matched to your lifestyle is a dog that stays.</p>
+          <h3>Better matches</h3>
+          <p>We optimize for lifelong placements, not clicks. A matched dog is a dog that stays.</p>
         </div>
-        <div class="feature">
+
+        <div class="feature-card feature-card-highlight" style="border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; transform: rotate(1.2deg);">
+          <div class="card-tack"></div>
           <div class="feature-icon">&#x1f6e1;</div>
           <h3>Verified rescues only</h3>
-          <p>Every organization on Wescue is verified. Other platforms mix shelter dogs with breeder listings — and there's no way to tell if a "breeder" is really a puppy mill. We eliminated that problem entirely.</p>
+          <p>Other platforms mix shelter dogs with breeder listings. We eliminated that problem entirely. No breeders = no puppy mills.</p>
         </div>
-        <div class="feature">
+
+        <div class="feature-card" data-decoration="tack" style="border-radius: 20px 255px 30px 255px / 255px 20px 255px 30px; transform: rotate(-1.3deg);">
+          <div class="card-tack"></div>
           <div class="feature-icon">&#x1f436;</div>
           <h3>Every dog gets seen</h3>
-          <p>Our algorithm surfaces overlooked dogs - seniors, special needs, less popular breeds - to the right adopters.</p>
+          <p>Our algorithm surfaces overlooked dogs &mdash; seniors, special needs, less popular breeds &mdash; to the right people.</p>
         </div>
-        <div class="feature">
+
+        <div class="feature-card" data-decoration="tape" style="border-radius: 255px 30px 225px 30px / 30px 225px 30px 255px; transform: rotate(0.6deg);">
+          <div class="card-tape"></div>
           <div class="feature-icon">&#x1f4b0;</div>
-          <h3>Always free for adopters</h3>
+          <h3>Always free</h3>
           <p>We'll never charge adopters. Adoption should be accessible, not expensive.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sample Dog Cards -->
-  <section class="section dogs-section">
+  <!-- Dog Carousel -->
+  <section class="section section-alt" id="dogs">
     <div class="container">
-      <h2 class="section-title">Dogs Looking for Homes</h2>
-      <p class="section-subtitle">These are just a few of the wonderful dogs waiting for you.</p>
-      <div class="dogs-grid">
-        <div class="dog-card">
-          <div class="dog-image" style="background-color: #fde8d0;">
-            <div class="dog-placeholder">&#x1f415;</div>
-            <span class="dog-badge">Great with kids</span>
-          </div>
-          <div class="dog-info">
-            <h3>Luna</h3>
-            <p class="dog-meta">Lab Mix &middot; 2 years &middot; Medium</p>
-            <p class="dog-desc">Friendly, energetic, and always ready for an adventure. Luna loves fetch and belly rubs equally.</p>
-            <div class="dog-details">
-              <span class="dog-tag">High Energy</span>
-              <span class="dog-tag">House Trained</span>
+      <div class="section-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Meet Some Pups!</div>
+      <h2 class="section-title">Dogs looking for homes</h2>
+      <p class="section-sub">Swipe through some of the wonderful dogs waiting for you.</p>
+
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous" style="border-radius: 68% 32% 55% 45% / 40% 60% 40% 60%;">&#x2190;</button>
+
+        <div class="carousel-track-container" style="border-radius: 30px 255px 30px 255px / 255px 30px 255px 30px;">
+          <div class="carousel-track" id="carouselTrack">
+
+            <div class="carousel-card" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+              <div class="dog-img" style="background-color: #d4edda;">
+                <span class="dog-emoji">&#x1f415;</span>
+                <span class="dog-badge" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Great with kids</span>
+              </div>
+              <div class="dog-body">
+                <h3>Luna</h3>
+                <p class="dog-meta">Lab Mix &middot; 2 yrs &middot; Medium</p>
+                <p class="dog-desc">Friendly, energetic, always ready for adventure. Loves fetch and belly rubs equally.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">High Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">House Trained</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">Happy Tails Rescue</span>
+                  <span class="dog-fee">$250</span>
+                </div>
+              </div>
             </div>
-            <div class="dog-footer">
-              <span class="dog-shelter">Happy Tails Rescue</span>
-              <span class="dog-fee">$250</span>
+
+            <div class="carousel-card" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">
+              <div class="dog-img" style="background-color: #dce8f0;">
+                <span class="dog-emoji">&#x1f9ae;</span>
+                <span class="dog-badge" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Calm companion</span>
+              </div>
+              <div class="dog-body">
+                <h3>Benny</h3>
+                <p class="dog-meta">Beagle &middot; 5 yrs &middot; Small</p>
+                <p class="dog-desc">The perfect couch buddy. Favorite activities: napping, snacking, and gentle walks.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Low Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Good with Cats</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">Second Chance Shelter</span>
+                  <span class="dog-fee">$175</span>
+                </div>
+              </div>
             </div>
+
+            <div class="carousel-card" style="border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px;">
+              <div class="dog-img" style="background-color: #f0e0e8;">
+                <span class="dog-emoji">&#x1f429;</span>
+                <span class="dog-badge" style="border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px;">Senior sweetie</span>
+              </div>
+              <div class="dog-body">
+                <h3>Rosie</h3>
+                <p class="dog-meta">Poodle Mix &middot; 9 yrs &middot; Small</p>
+                <p class="dog-desc">A gentle soul with so much love. Loyal, quiet, and the perfect lap dog.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Low Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Apt Friendly</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">Golden Years Rescue</span>
+                  <span class="dog-fee">$100</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-card" style="border-radius: 20px 255px 30px 255px / 255px 20px 255px 30px;">
+              <div class="dog-img" style="background-color: #e8e0d4;">
+                <span class="dog-emoji">&#x1f43a;</span>
+                <span class="dog-badge" style="border-radius: 20px 255px 30px 255px / 255px 20px 255px 30px;">Loyal protector</span>
+              </div>
+              <div class="dog-body">
+                <h3>Duke</h3>
+                <p class="dog-meta">GSD Mix &middot; 3 yrs &middot; Large</p>
+                <p class="dog-desc">Smart, devoted, and eager to please. Needs room to run and a job to do.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">High Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Needs Space</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">Paws of Hope</span>
+                  <span class="dog-fee">$300</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-card" style="border-radius: 30px 255px 20px 255px / 255px 30px 255px 20px;">
+              <div class="dog-img" style="background-color: #fff3cd;">
+                <span class="dog-emoji">&#x1f436;</span>
+                <span class="dog-badge" style="border-radius: 30px 255px 20px 255px / 255px 30px 255px 20px;">Playful smarty</span>
+              </div>
+              <div class="dog-body">
+                <h3>Maple</h3>
+                <p class="dog-meta">Corgi Mix &middot; 1.5 yrs &middot; Medium</p>
+                <p class="dog-desc">Playful, clever, and full of personality. Will learn tricks for treats.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Moderate Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Good with All</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">Furever Friends</span>
+                  <span class="dog-fee">$275</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-card" style="border-radius: 255px 30px 225px 30px / 30px 225px 30px 255px;">
+              <div class="dog-img" style="background-color: #e0ddd5;">
+                <span class="dog-emoji">&#x1f43b;</span>
+                <span class="dog-badge" style="border-radius: 255px 30px 225px 30px / 30px 225px 30px 255px;">Calm giant</span>
+              </div>
+              <div class="dog-body">
+                <h3>Bear</h3>
+                <p class="dog-meta">Chow Mix &middot; 6 yrs &middot; Large</p>
+                <p class="dog-desc">Independent, dignified, and surprisingly cuddly once he trusts you.</p>
+                <div class="dog-tags">
+                  <span class="dog-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">Low Energy</span>
+                  <span class="dog-tag" style="border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px;">Experienced Owner</span>
+                </div>
+                <div class="dog-footer">
+                  <span class="dog-shelter">New Beginnings</span>
+                  <span class="dog-fee">$200</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-        <div class="dog-card">
-          <div class="dog-image" style="background-color: #e0e8f0;">
-            <div class="dog-placeholder">&#x1f9ae;</div>
-            <span class="dog-badge">Calm companion</span>
-          </div>
-          <div class="dog-info">
-            <h3>Benny</h3>
-            <p class="dog-meta">Beagle &middot; 5 years &middot; Small</p>
-            <p class="dog-desc">The perfect couch buddy. Benny's favorite activities include napping, snacking, and gentle walks.</p>
-            <div class="dog-details">
-              <span class="dog-tag">Low Energy</span>
-              <span class="dog-tag">Good with Cats</span>
-            </div>
-            <div class="dog-footer">
-              <span class="dog-shelter">Second Chance Animal Shelter</span>
-              <span class="dog-fee">$175</span>
-            </div>
-          </div>
-        </div>
-        <div class="dog-card">
-          <div class="dog-image" style="background-color: #f0e0e8;">
-            <div class="dog-placeholder">&#x1f429;</div>
-            <span class="dog-badge">Senior sweetie</span>
-          </div>
-          <div class="dog-info">
-            <h3>Rosie</h3>
-            <p class="dog-meta">Poodle Mix &middot; 9 years &middot; Small</p>
-            <p class="dog-desc">A gentle soul with so much love to give. Rosie is loyal, quiet, and the perfect lap dog.</p>
-            <div class="dog-details">
-              <span class="dog-tag">Low Energy</span>
-              <span class="dog-tag">Apartment Friendly</span>
-            </div>
-            <div class="dog-footer">
-              <span class="dog-shelter">Golden Years Rescue</span>
-              <span class="dog-fee">$100</span>
-            </div>
-          </div>
-        </div>
+
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next" style="border-radius: 32% 68% 45% 55% / 60% 40% 60% 40%;">&#x2192;</button>
       </div>
-      <div class="dogs-cta">
-        <a href="#chat-section" class="btn btn-primary btn-lg">Find Your Match</a>
+
+      <div class="carousel-dots" id="carouselDots"></div>
+
+      <div class="carousel-cta">
+        <a href="#chat-section" class="btn-sketchy btn-primary">Find Your Match!</a>
       </div>
     </div>
   </section>
 
   <!-- For Shelters -->
-  <section id="shelters" class="section shelters-section">
+  <section id="shelters" class="section">
     <div class="container">
-      <div class="shelter-content">
+      <div class="shelter-layout">
         <div class="shelter-text">
-          <h2>For Shelters & Rescues</h2>
-          <p class="shelter-lead">Wescue brings you pre-qualified adopters matched to your dogs. Less time screening, more time saving lives.</p>
-          <ul class="shelter-benefits">
+          <div class="section-tag" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">For Shelters</div>
+          <h2>We bring you<br>better adopters.</h2>
+          <p class="shelter-lead">Pre-qualified, lifestyle-matched, and ready to commit. Less time screening, more time saving lives.</p>
+
+          <ul class="shelter-list">
             <li>
-              <strong>Pre-qualified applicants.</strong> Adopters arrive with lifestyle data already collected, so you can focus on the personal connection.
+              <span class="list-check">&#x2714;</span>
+              <div>
+                <strong>Pre-qualified applicants.</strong> Adopters arrive with lifestyle data already collected.
+              </div>
             </li>
             <li>
-              <strong>Every dog gets visibility.</strong> Our algorithm ensures overlooked dogs reach the right people - not just the photogenic puppies.
+              <span class="list-check">&#x2714;</span>
+              <div>
+                <strong>Every dog gets visibility.</strong> Our algorithm ensures overlooked dogs reach the right people.
+              </div>
             </li>
             <li>
-              <strong>Reduce returns.</strong> Better matches mean longer-lasting adoptions and less heartbreak for everyone.
+              <span class="list-check">&#x2714;</span>
+              <div>
+                <strong>Reduce returns.</strong> Better matches mean longer-lasting adoptions.
+              </div>
             </li>
             <li>
-              <strong>Free to join.</strong> Wescue is free for shelters. Always will be.
+              <span class="list-check">&#x2714;</span>
+              <div>
+                <strong>Free to join.</strong> Wescue is free for shelters. Always will be.
+              </div>
             </li>
           </ul>
-          <a href="#" class="btn btn-primary btn-lg">Register Your Shelter</a>
+
+          <a href="#" class="btn-sketchy btn-primary">Register Your Shelter</a>
         </div>
-        <div class="shelter-stats-box">
-          <h3>The Problem We're Solving</h3>
+
+        <div class="shelter-stats-card" style="border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;">
+          <div class="card-tape" style="transform: rotate(2deg);"></div>
+          <h3>The problem we're solving</h3>
           <div class="shelter-stat">
             <span class="shelter-stat-num">~20%</span>
             <span class="shelter-stat-desc">of adopted dogs are returned within the first year</span>
@@ -261,12 +403,12 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Final CTA -->
   <section class="section cta-section">
-    <div class="container">
+    <div class="container cta-content">
       <h2>Every dog deserves a home that fits.</h2>
-      <p>Start a conversation with Wescue and meet your match in minutes.</p>
-      <a href="#chat-section" class="btn btn-primary btn-lg">Start Matching</a>
+      <p>Start a conversation and meet your match in minutes.</p>
+      <a href="#chat-section" class="btn-sketchy btn-cta">Start Matching!</a>
     </div>
   </section>
 
@@ -275,29 +417,29 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="footer-logo"><span class="logo-icon">&#x1f43e;</span> wescue</span>
+          <span class="footer-logo"><span class="logo-paw">&#x1f43e;</span> wescue</span>
           <p>Making rescue dog adoption easier, faster, and better matched.</p>
         </div>
-        <div class="footer-links">
-          <h4>Platform</h4>
+        <div class="footer-col">
+          <h4 class="underline-squiggle">Platform</h4>
           <a href="#how-it-works">How It Works</a>
           <a href="#chat-section">Find a Dog</a>
           <a href="#shelters">For Shelters</a>
         </div>
-        <div class="footer-links">
-          <h4>Company</h4>
+        <div class="footer-col">
+          <h4 class="underline-squiggle">Company</h4>
           <a href="#">About</a>
           <a href="#">Mission</a>
           <a href="#">Contact</a>
         </div>
-        <div class="footer-links">
-          <h4>Legal</h4>
+        <div class="footer-col">
+          <h4 class="underline-squiggle">Legal</h4>
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Wescue. Shelter-first, always.</p>
+        <p>&copy; 2026 Wescue. Shelter-first, always. &#x1f43e;</p>
       </div>
     </div>
   </footer>
