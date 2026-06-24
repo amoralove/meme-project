@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fdfbf7;
+  --color-paper-alt: #e8f5e9;
+  --color-pencil: #2d2d2d;
+  --color-erased: #e5e0d8;
+  --color-forest: #2d6a4f;
+  --color-forest-dark: #1b4332;
+  --color-forest-light: #40916c;
+  --color-forest-pale: #d4edda;
+  --color-warm: #d4a373;
+  --color-warm-light: #fde8d0;
+
+  --font-heading: "Kalam", cursive;
+  --font-body: "Patrick Hand", cursive;
+
+  --shadow-hard: 4px 4px 0px 0px #2d2d2d;
+  --shadow-hard-sm: 3px 3px 0px 0px rgba(45, 45, 45, 0.15);
+  --shadow-hard-lg: 8px 8px 0px 0px #2d2d2d;
+  --shadow-hard-hover: 2px 2px 0px 0px #2d2d2d;
+  --shadow-hard-green: 4px 4px 0px 0px #2d6a4f;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    color: var(--color-pencil);
+    background-color: var(--color-paper);
+    background-image: radial-gradient(var(--color-erased) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .btn-sketchy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    border: 3px solid var(--color-pencil);
+    cursor: pointer;
+    transition: transform 100ms, box-shadow 100ms, background 100ms;
+    background: white;
+    color: var(--color-pencil);
+    box-shadow: var(--shadow-hard);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+
+  .btn-sketchy:hover {
+    transform: translate(2px, 2px);
+    box-shadow: var(--shadow-hard-hover);
+  }
+
+  .btn-sketchy:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+
+  .btn-primary {
+    background: var(--color-forest);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-forest-dark);
+    color: white;
+  }
+
+  .card-sketchy {
+    background: white;
+    border: 3px solid var(--color-pencil);
+    box-shadow: var(--shadow-hard);
+    transition: transform 100ms, box-shadow 100ms;
+  }
+
+  .card-sketchy:hover {
+    box-shadow: var(--shadow-hard-lg);
+  }
+
+  .wobbly-1 { border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; }
+  .wobbly-2 { border-radius: 15px 255px 15px 225px / 225px 15px 255px 15px; }
+  .wobbly-3 { border-radius: 30px 255px 20px 255px / 255px 30px 255px 20px; }
+  .wobbly-4 { border-radius: 255px 20px 225px 20px / 20px 225px 20px 255px; }
+  .blob-1 { border-radius: 68% 32% 55% 45% / 40% 60% 40% 60%; }
+  .blob-2 { border-radius: 40% 60% 35% 65% / 55% 45% 55% 45%; }
+}
