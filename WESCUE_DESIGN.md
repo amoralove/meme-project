@@ -33,7 +33,7 @@ This is the hardest question and where most adoption platforms fail. Shelters ar
 - **Pre-qualified leads.** Adopters arrive with lifestyle data already collected, saving shelter staff from lengthy intake conversations.
 - **Portable applications.** One application works across all shelters, so adopters don't abandon the process out of frustration.
 - **Algorithmic visibility.** Every dog gets surfaced to the right person — not just the photogenic puppies.
-- **Zero switching cost initially.** Wescue can aggregate existing listings (via Petfinder/RescueGroups APIs or shelter management system integrations) without requiring shelters to do anything new.
+- **Zero switching cost initially.** Wescue can aggregate existing listings (via RescueGroups.org API or shelter management system integrations like Shelterluv) without requiring shelters to do anything new.
 
 ### Honest Challenge to This Assumption
 
@@ -576,13 +576,45 @@ Make adoption so easy and well-matched that "why didn't you just adopt?" becomes
 
 ---
 
+## Data Acquisition Strategy (Revised — No Petfinder API)
+
+Petfinder no longer offers a public API. The cold-start data strategy now relies on three pillars:
+
+### Pillar 1: RescueGroups.org API (Broad Coverage)
+- Free API specifically for rescue organizations and shelters
+- Thousands of listings, rescue/shelter-only (no breeders — aligns with Wescue's mission)
+- Nonprofit organization that actively encourages developers to build on their data
+- Apply at: https://rescuegroups.org/services/request-an-api-key/
+- Use this for day-one coverage so the platform isn't empty at launch
+
+### Pillar 2: Direct Shelter Partnerships (Depth + Trust)
+- Personally onboard 5–10 shelters in your launch metro area
+- Visit in person, bring a demo, show how pre-qualified adopters save them time
+- Manually enter the first 50–100 dogs from partner shelters (with permission)
+- Build a dead-simple shelter intake form: photo upload + name + breed + age + temperament checkboxes, under 2 minutes to list a dog
+- These early relationships become your testimonials and feedback loop
+
+### Pillar 3: Shelter Management System Integrations (Scale)
+- **Shelterluv** — API available, used by thousands of shelters. Pursue first.
+- **PetPoint** (by Pethealth) — widely used in municipal shelters
+- **Chameleon** — used by large metro shelters
+- Integrating with even one system gives you access to real-time shelter inventory — fresher data than any aggregator
+- Target Month 3–4 for the first integration (Shelterluv recommended)
+
+### What NOT to Do
+- Do not scrape shelter websites or social media without explicit permission
+- Do not rely on a single data source — diversify early
+- Do not wait for "enough data" to launch — 50 real dogs in one city is enough to validate
+
+---
+
 ## Next Steps for the Founder
 
-1. **This week:** Build the landing page and AI chat prototype.
-2. **This month:** Seed the database with 50–100 real shelter dogs (with permission or via Petfinder API). Test the matching with 10 real potential adopters.
+1. **This week:** Build the landing page and AI chat prototype. (Done — see index.html)
+2. **This month:** Apply for a RescueGroups.org API key. Seed the database with 50–100 real shelter dogs. Test the matching with 10 real potential adopters.
 3. **Month 2:** Talk to 20 shelter workers. Don't sell them anything. Ask: "What's the hardest part of your job? What would make adoption easier for you?" Listen more than you pitch.
 4. **Month 3:** Launch V1 to the public in one metro area. Measure: Do people complete the AI chat? Do they click on recommended dogs? Do they start applications?
-5. **Month 4:** If metrics are promising, onboard 5 shelters directly. Build the shelter portal.
+5. **Month 4:** If metrics are promising, onboard 5 shelters directly. Build the shelter portal. Begin Shelterluv API integration.
 6. **Month 6:** Have 10+ shelters, 100+ adoptions, and a clear signal on product-market fit.
 
 **The single most important thing:** Talk to shelter workers early and often. They are your supply side and your domain experts. Build what they need, not what you imagine they need.
