@@ -111,8 +111,11 @@ export default function SignupPage() {
             borderRadius: "15px 255px 15px 225px / 225px 15px 255px 15px",
           }}
         >
-          {/* Tack decoration */}
-          <div className="absolute top-[-8px] left-1/2 -translate-x-1/2 w-4 h-4 bg-forest border-2 border-forest-dark rounded-full shadow-[1px_1px_0px_#2d2d2d]" />
+          {/* Tape decoration */}
+          <div
+            className="tape tape-warm absolute w-[110px]"
+            style={{ top: "-14px", left: "50%", transform: "translateX(-50%) rotate(1.5deg)" }}
+          />
 
           <h1 className="font-heading text-3xl font-bold text-center mb-2">
             Join Wescue

@@ -9,6 +9,8 @@ const WOBBLY_VARIANTS = [
 ];
 
 const ROTATIONS = ["-1.5deg", "0.8deg", "-0.5deg", "1.2deg", "-1deg", "0.6deg"];
+const TAPE_ROTATIONS = ["-2deg", "1.5deg", "-1deg", "2.5deg", "-1.8deg", "0.8deg"];
+const TAPE_VARIANTS = ["tape", "tape tape-warm", "tape tape-sage", "tape tape-wide", "tape", "tape tape-warm"];
 
 const BG_COLORS = ["#d4edda", "#dce8f0", "#f0e0e8", "#e8e0d4", "#fff3cd", "#e0ddd5"];
 
@@ -27,11 +29,19 @@ export function DogCard({ dog, index = 0 }: { dog: Dog; index?: number }) {
   const wobbly = WOBBLY_VARIANTS[index % WOBBLY_VARIANTS.length];
   const rotation = ROTATIONS[index % ROTATIONS.length];
   const bgColor = BG_COLORS[index % BG_COLORS.length];
+  const tapeClass = TAPE_VARIANTS[index % TAPE_VARIANTS.length];
+  const tapeRotation = TAPE_ROTATIONS[index % TAPE_ROTATIONS.length];
 
   const photoUrl = dog.photos?.[0];
 
   return (
     <Link href={`/dogs/${dog.id}`}>
+      <div className="relative pt-3">
+        {/* tape across top of card */}
+        <div
+          className={`${tapeClass} absolute top-0 left-1/2 -translate-x-1/2 w-[90px] z-10`}
+          style={{ transform: `translateX(-50%) rotate(${tapeRotation})` }}
+        />
       <div
         className="card-sketchy overflow-hidden cursor-pointer hover:rotate-[-1deg]"
         style={{ borderRadius: wobbly, transform: `rotate(${rotation})` }}
@@ -96,6 +106,7 @@ export function DogCard({ dog, index = 0 }: { dog: Dog; index?: number }) {
             </span>
           </div>
         </div>
+      </div>
       </div>
     </Link>
   );

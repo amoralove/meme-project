@@ -65,7 +65,10 @@ export default function LoginPage() {
           }}
         >
           {/* Tape decoration */}
-          <div className="absolute top-[-8px] left-1/2 -translate-x-1/2 -rotate-1 w-[100px] h-6 bg-forest/20 border border-pencil/10 rounded" />
+          <div
+            className="tape tape-sage absolute w-[110px]"
+            style={{ top: "-14px", left: "50%", transform: "translateX(-50%) rotate(-1.5deg)" }}
+          />
 
           <h1 className="font-heading text-3xl font-bold text-center mb-2">
             Welcome back
