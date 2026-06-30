@@ -46,11 +46,9 @@ export default function Home() {
                   "255px 15px 225px 15px / 15px 225px 15px 255px",
               }}
             >
-              <img
-                src="/logo.png"
-                alt="Wescue dog"
-                className="w-[160px] h-[160px] object-contain mx-auto mb-3 animate-[wiggle_3s_ease-in-out_infinite]"
-              />
+              <span className="text-[7rem] block mb-3 animate-[wiggle_3s_ease-in-out_infinite]">
+                &#x1f436;
+              </span>
               <p className="font-heading text-xl font-bold text-forest">
                 your new best friend is waiting!
               </p>
