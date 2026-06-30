@@ -63,7 +63,7 @@ export default function SignupPage() {
             href="/"
             className="flex items-center justify-center gap-1 font-heading text-3xl font-bold text-forest mb-10"
           >
-            <span className="text-2xl">&#x1f43e;</span> wescue
+            <img src="/logo.png" alt="Wescue dog" className="h-10 w-10 object-contain" /> wescue
           </Link>
 
           <div
@@ -102,7 +102,7 @@ export default function SignupPage() {
           href="/"
           className="flex items-center justify-center gap-1 font-heading text-3xl font-bold text-forest mb-10"
         >
-          <span className="text-2xl">&#x1f43e;</span> wescue
+          <img src="/logo.png" alt="Wescue dog" className="h-10 w-10 object-contain" /> wescue
         </Link>
 
         <div
