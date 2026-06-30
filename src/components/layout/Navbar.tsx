@@ -35,9 +35,14 @@ export function Navbar() {
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between h-[72px]">
         <Link
           href="/"
-          className="font-heading text-[1.7rem] font-bold text-forest flex items-center gap-2"
+          className="font-heading text-[1.7rem] font-bold flex items-end gap-1 leading-none"
+          style={{ color: "#9D6638" }}
         >
-          <img src="/logo.png" alt="Wescue dog" className="h-10 w-10 object-contain" />
+          <img
+            src="/logo.png"
+            alt="Wescue dog"
+            className="h-16 w-16 object-contain object-bottom translate-y-1"
+          />
           wescue
         </Link>
 
